@@ -8,5 +8,5 @@
         "description": "Binaries required for shader compilation",
         "category": "Tools"
     },
-    "sdk_version": "40"
+    "sdk_version": "41"
 }
