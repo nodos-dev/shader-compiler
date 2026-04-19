@@ -5,10 +5,12 @@
 from subprocess import PIPE, run, call, Popen
 import platform
 from sys import stdout, stderr
+import logging
 import os
 import sys
 import threading
-from loguru import logger
+
+logger = logging.getLogger("shaderc")
 
 path = str(os.path.dirname(__file__))
 run_dir = os.getcwd()
@@ -67,6 +69,10 @@ def compile_shaders():
         th.join()
 
 if __name__ == "__main__":
-    logger.remove()
-    logger.add(sys.stdout, format="<green>[Shader Compiler]</green> <level>{time:HH:mm:ss.SSS}</level> <level>{level}</level> <level>{message}</level>")
+    logging.basicConfig(
+        stream=sys.stdout,
+        level=logging.INFO,
+        format="[Shader Compiler] %(asctime)s.%(msecs)03d %(levelname)s %(message)s",
+        datefmt="%H:%M:%S",
+    )
     compile_shaders()
