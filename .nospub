@@ -2,17 +2,17 @@
 	"release_globs": {
 		"x86_64-windows": [
 			"*.nosplugin",
-			"Binaries/tools/Windows/**/*",
+			"Binaries/tools/Windows/x86_64/**/*",
             "Scripts/**/*"
 		],
 		"x86_64-linux": [
 			"*.nosplugin",
-			"Binaries/tools/Linux/**/*",
+			"Binaries/tools/Linux/x86_64/**/*",
             "Scripts/**/*"
 		],
-		"x86_64-macos": [
+		"aarch64-macos": [
 			"*.nosplugin",
-			"Binaries/tools/Darwin/**/*",
+			"Binaries/tools/Darwin/aarch64/**/*",
             "Scripts/**/*"
 		]
 	}
